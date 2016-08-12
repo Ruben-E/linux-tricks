@@ -1,0 +1,16 @@
+# Linux tricks
+
+**Delete untagged docker images**
+```
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+```
+
+**Delete dangling docker volumes**
+```
+docker volume ls -qf dangling=true | xargs -r docker volume rm
+```
+
+**View largest folders in current folder**
+```
+sudo du -hsx * | sort -rh | head -10
+```
