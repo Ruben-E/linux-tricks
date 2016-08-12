@@ -19,3 +19,10 @@ docker volume ls -qf dangling=true | xargs -r docker volume rm
 ```
 sudo du -hsx * | sort -rh | head -10
 ```
+
+**Restart VBoxClient**
+```
+killall VBoxClient
+VBoxClient-all
+```
+
